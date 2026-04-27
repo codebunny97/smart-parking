@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "name": "Hitech City Parking",
+    "address": "Madhapur, Hyderabad",
+    "lat": 17.4475,
+    "lng": 78.3762,
+    "totalSlots": 100,
+    "availableSlots": 45
+  },
+  {
+    "id": "2",
+    "name": "Cyber Towers Parking",
+    "address": "Hitech City, Hyderabad",
+    "lat": 17.4504,
+    "lng": 78.3802,
+    "totalSlots": 80,
+    "availableSlots": 12
+  },
+  {
+    "id": "3",
+    "name": "Inorbit Mall Parking",
+    "address": "Whitefield Rd, Hyderabad",
+    "lat": 17.4389,
+    "lng": 78.3927,
+    "totalSlots": 200,
+    "availableSlots": 140
+  },
+  {
+    "id": "4",
+    "name": "Mindspace Office Parking",
+    "address": "Raheja Mindspace, HITEC City",
+    "lat": 17.4436,
+    "lng": 78.3814,
+    "totalSlots": 150,
+    "availableSlots": 0
+  },
+  {
+    "id": "5",
+    "name": "Shilparamam Parking",
+    "address": "Shilparamam, Hi-Tech City",
+    "lat": 17.4533,
+    "lng": 78.3718,
+    "totalSlots": 60,
+    "availableSlots": 30
+  },
+  {
+    "id": "6",
+    "name": "Forum Sujana Mall Parking",
+    "address": "Kukatpally, Hyderabad",
+    "lat": 17.4947,
+    "lng": 78.3996,
+    "totalSlots": 120,
+    "availableSlots": 88
+  }
+]
