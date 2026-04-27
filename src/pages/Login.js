@@ -53,7 +53,7 @@ export default function Login() {
                   style={{ ...styles.roleBtn, ...(role === r ? styles.roleBtnActive : {}) }}
                   onClick={() => setRole(r)}
                 >
-                  {r === 'user' ? '👤 User' : '🔧 Admin'}
+                  {r === 'user' ? 'User' : 'Admin'}
                 </button>
               ))}
             </div>
