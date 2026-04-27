@@ -9,6 +9,30 @@ export default function ParkingList({ selectedParking, onSelectParking }) {
   const [sort, setSort] = useState('name');
   const [showAdmin, setShowAdmin] = useState(false);
   const [locLoading, setLocLoading] = useState(false);
+  const [showNearbyOnly, setShowNearbyOnly] = useState(false);
+
+  const NEARBY_RADIUS_KM = 5;
+
+  const getDistance = (lat, lng) => {
+    if (!userLocation) return null;
+    const R = 6371;
+    const dLat = ((lat - userLocation.lat) * Math.PI) / 180;
+    const dLng = ((lng - userLocation.lng) * Math.PI) / 180;
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos((userLocation.lat * Math.PI) / 180) *
+        Math.cos((lat * Math.PI) / 180) *
+        Math.sin(dLng / 2) ** 2;
+    const dist = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return dist;
+  };
+
+  const nearbyParking = userLocation
+    ? parkingList.filter((p) => {
+        const dist = getDistance(p.lat, p.lng);
+        return dist !== null && dist <= NEARBY_RADIUS_KM;
+      })
+    : [];
 
   const filtered = useMemo(() => {
     let list = parkingList.filter(
@@ -17,20 +41,29 @@ export default function ParkingList({ selectedParking, onSelectParking }) {
         p.address.toLowerCase().includes(search.toLowerCase())
     );
 
+    if (showNearbyOnly && userLocation) {
+      list = list.filter((p) => {
+        const dist = getDistance(p.lat, p.lng);
+        return dist !== null && dist <= NEARBY_RADIUS_KM;
+      });
+    }
+
     if (sort === 'available') {
       list = [...list].sort((a, b) => b.availableSlots - a.availableSlots);
     } else if (sort === 'distance' && userLocation) {
       list = [...list].sort((a, b) => {
-        const dist = (p) =>
-          Math.hypot(p.lat - userLocation.lat, p.lng - userLocation.lng);
-        return dist(a) - dist(b);
+        const distA = getDistance(a.lat, a.lng);
+        const distB = getDistance(b.lat, b.lng);
+        if (distA === null) return 1;
+        if (distB === null) return -1;
+        return distA - distB;
       });
     } else if (sort === 'name') {
       list = [...list].sort((a, b) => a.name.localeCompare(b.name));
     }
 
     return list;
-  }, [parkingList, search, sort, userLocation]);
+  }, [parkingList, search, sort, userLocation, showNearbyOnly]);
 
   const handleLocate = () => {
     if (!navigator.geolocation) return alert('Geolocation not supported.');
@@ -110,6 +143,18 @@ export default function ParkingList({ selectedParking, onSelectParking }) {
             <span style={{ fontWeight: '600', color: '#1e8e3e' }}>{available}</span> / {total} total spots free
           </span>
           <span style={styles.stat}>{filtered.length} locations</span>
+          {userLocation && (
+            <button
+              onClick={() => setShowNearbyOnly(!showNearbyOnly)}
+              style={{
+                ...styles.nearbyBtn,
+                ...(showNearbyOnly ? styles.nearbyBtnActive : {}),
+              }}
+              title={`Show parking within ${NEARBY_RADIUS_KM}km`}
+            >
+              {nearbyParking.length} Nearby
+            </button>
+          )}
         </div>
       </div>
 
@@ -231,8 +276,25 @@ const styles = {
     borderColor: '#1a73e8',
     fontWeight: '600',
   },
-  statsRow: { display: 'flex', justifyContent: 'space-between' },
+  statsRow: { display: 'flex', justifyContent: 'space-between', gap: '8px', flexWrap: 'wrap' },
   stat: { fontSize: '12px', color: '#5f6368' },
+  nearbyBtn: {
+    fontSize: '11px',
+    padding: '3px 8px',
+    border: '1px solid #dadce0',
+    borderRadius: '20px',
+    background: '#fff',
+    color: '#5f6368',
+    cursor: 'pointer',
+    fontFamily: "'Segoe UI', Arial, sans-serif",
+    fontWeight: '500',
+  },
+  nearbyBtnActive: {
+    background: '#e8f0fe',
+    color: '#1a73e8',
+    borderColor: '#1a73e8',
+    fontWeight: '600',
+  },
   list: { flex: 1, overflowY: 'auto' },
   empty: { padding: '24px 16px', textAlign: 'center', color: '#9aa0a6', fontSize: '14px' },
   adminToggle: { padding: '12px 16px', borderTop: '1px solid #f1f3f4', flexShrink: 0 },

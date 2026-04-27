@@ -52,5 +52,167 @@
     "lng": 78.3996,
     "totalSlots": 120,
     "availableSlots": 88
+  },
+  {
+    "id": "7",
+    "name": "Banjara Hills Parking Complex",
+    "address": "Banjara Hills, Hyderabad",
+    "lat": 17.3845,
+    "lng": 78.4425,
+    "totalSlots": 180,
+    "availableSlots": 75
+  },
+  {
+    "id": "8",
+    "name": "Jubilee Hills Parking",
+    "address": "Jubilee Hills, Hyderabad",
+    "lat": 17.3714,
+    "lng": 78.4092,
+    "totalSlots": 95,
+    "availableSlots": 42
+  },
+  {
+    "id": "9",
+    "name": "Begumpet Airport Parking",
+    "address": "Begumpet, Hyderabad",
+    "lat": 17.3704,
+    "lng": 78.4704,
+    "totalSlots": 250,
+    "availableSlots": 156
+  },
+  {
+    "id": "10",
+    "name": "DLF Golf Course Parking",
+    "address": "DLF Golf Course, Hyderabad",
+    "lat": 17.3819,
+    "lng": 78.4058,
+    "totalSlots": 110,
+    "availableSlots": 8
+  },
+  {
+    "id": "11",
+    "name": "Secunderabad Railway Station Parking",
+    "address": "Secunderabad Station, Hyderabad",
+    "lat": 17.3733,
+    "lng": 78.5062,
+    "totalSlots": 300,
+    "availableSlots": 201
+  },
+  {
+    "id": "12",
+    "name": "Kondapur Business District Parking",
+    "address": "Kondapur, Hyderabad",
+    "lat": 17.4614,
+    "lng": 78.3521,
+    "totalSlots": 175,
+    "availableSlots": 92
+  },
+  {
+    "id": "13",
+    "name": "Gachibowli Tech Park Parking",
+    "address": "Gachibowli, Hyderabad",
+    "lat": 17.4433,
+    "lng": 78.4483,
+    "totalSlots": 220,
+    "availableSlots": 118
+  },
+  {
+    "id": "14",
+    "name": "Manikonda Street Parking",
+    "address": "Manikonda, Hyderabad",
+    "lat": 17.4281,
+    "lng": 78.4714,
+    "totalSlots": 85,
+    "availableSlots": 22
+  },
+  {
+    "id": "15",
+    "name": "Bowenpally Parking Hub",
+    "address": "Bowenpally, Hyderabad",
+    "lat": 17.3909,
+    "lng": 78.5185,
+    "totalSlots": 130,
+    "availableSlots": 64
+  },
+  {
+    "id": "16",
+    "name": "SR Nagar Community Parking",
+    "address": "SR Nagar, Hyderabad",
+    "lat": 17.4063,
+    "lng": 78.4781,
+    "totalSlots": 70,
+    "availableSlots": 19
+  },
+  {
+    "id": "17",
+    "name": "Charminar Heritage Parking",
+    "address": "Charminar, Hyderabad",
+    "lat": 17.3596,
+    "lng": 78.4740,
+    "totalSlots": 160,
+    "availableSlots": 105
+  },
+  {
+    "id": "18",
+    "name": "Lakdi Ka Pool Parking",
+    "address": "Lakdi Ka Pool, Hyderabad",
+    "lat": 17.3747,
+    "lng": 78.4608,
+    "totalSlots": 90,
+    "availableSlots": 51
+  },
+  {
+    "id": "19",
+    "name": "Nampally Station Parking",
+    "address": "Nampally, Hyderabad",
+    "lat": 17.3630,
+    "lng": 78.4780,
+    "totalSlots": 210,
+    "availableSlots": 147
+  },
+  {
+    "id": "20",
+    "name": "Dilsukhnagar Commercial Parking",
+    "address": "Dilsukhnagar, Hyderabad",
+    "lat": 17.3835,
+    "lng": 78.5343,
+    "totalSlots": 140,
+    "availableSlots": 73
+  },
+  {
+    "id": "21",
+    "name": "Mehdipatnam Central Parking",
+    "address": "Mehdipatnam, Hyderabad",
+    "lat": 17.3971,
+    "lng": 78.4919,
+    "totalSlots": 105,
+    "availableSlots": 38
+  },
+  {
+    "id": "22",
+    "name": "RTC Cross Roads Parking",
+    "address": "RTC Cross Roads, Hyderabad",
+    "lat": 17.3780,
+    "lng": 78.4886,
+    "totalSlots": 115,
+    "availableSlots": 67
+  },
+  {
+    "id": "23",
+    "name": "Ameerpet Business Parking",
+    "address": "Ameerpet, Hyderabad",
+    "lat": 17.3818,
+    "lng": 78.4619,
+    "totalSlots": 125,
+    "availableSlots": 44
+  },
+  {
+    "id": "24",
+    "name": "Somajiguda Corporate Parking",
+    "address": "Somajiguda, Hyderabad",
+    "lat": 17.3896,
+    "lng": 78.4558,
+    "totalSlots": 145,
+    "availableSlots": 89
   }
 ]

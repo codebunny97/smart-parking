@@ -12,6 +12,7 @@ style.textContent = `
   .leaflet-popup-content { margin: 14px 16px !important; }
   ::-webkit-scrollbar { width: 5px; }
   ::-webkit-scrollbar-thumb { background: #dadce0; border-radius: 4px; }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 `;
 document.head.appendChild(style);
 
