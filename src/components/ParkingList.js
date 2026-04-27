@@ -95,7 +95,7 @@ export default function ParkingList({ selectedParking, onSelectParking }) {
           <span style={styles.logoText}>ParkFinder</span>
           <div style={styles.headerRight}>
             <button onClick={handleLocate} style={styles.iconBtn} title="Use my location">
-              {locLoading ? '⏳' : '📍'}
+              {locLoading ? 'Finding User' : 'Use my location'}
             </button>
             <button onClick={logout} style={styles.iconBtn} title="Sign out">
               Sign out
@@ -106,13 +106,13 @@ export default function ParkingList({ selectedParking, onSelectParking }) {
           <span style={styles.userName}>
             {user?.name} · <span style={{ color: user?.role === 'admin' ? '#f29900' : '#1a73e8' }}>{user?.role}</span>
           </span>
-          {userLocation && <span style={styles.locBadge}>📍 Located</span>}
+          {userLocation && <span style={styles.locBadge}>User Located</span>}
         </div>
       </div>
 
       {/* Search */}
       <div style={styles.searchBar}>
-        <span style={styles.searchIcon}>🔍</span>
+        <span style={styles.searchIcon}>Search</span>
         <input
           style={styles.searchInput}
           placeholder="Search parking..."
